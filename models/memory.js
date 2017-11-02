@@ -8,7 +8,8 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 		image: {
-
+			type: DataTypes.BLOB,
+			allowNull: false
 		},
 		date: {
 			type: DataTypes.DATEONLY, //DATE without time.
