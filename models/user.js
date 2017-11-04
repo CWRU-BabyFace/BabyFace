@@ -14,12 +14,14 @@ module.exports = function(sequelize, DataTypes){
 				len: [5]
 			}
 		},
+
+
 	}),
-	User.associate = function(models){
-		User.hasMany(models.Child, {
-			onDelete: "cascade"
-		});
-	};
+	
+	
+
+	User.hasMany(models.Child, {onDelete: "cascade"});
+	
 
 	return User;
 };
