@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		});
 		Child.hasMany(models.Memory, {
-			onDelete: "cascase"
+			onDelete: "cascade"
 		});
 	};
 

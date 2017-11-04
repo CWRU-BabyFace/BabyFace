@@ -16,12 +16,12 @@ module.exports = function(sequelize, DataTypes){
 		},
 
 
-	}),
+	});
 	
 	
-
-	User.hasMany(models.Child, {onDelete: "cascade"});
-	
+	User.associate = function(models) {
+		User.hasMany(models.Child, {onDelete: "cascade"});
+	};
 
 	return User;
 };
