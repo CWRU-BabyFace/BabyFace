@@ -22,7 +22,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static(__dirname + "./public"));
 
-
+//routes
 require("./controllers/child-api.js")(app);
 require("./controllers/memory-api.js")(app);
 require("./controllers/user-api.js")(app);
