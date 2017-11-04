@@ -23,9 +23,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(__dirname + "./public"));
 
 //routes
-require("./controllers/child-api.js")(app);
-require("./controllers/memory-api.js")(app);
-require("./controllers/user-api.js")(app);
+require("./routes/child-api.js")(app);
+require("./routes/memory-api.js")(app);
+require("./routes/user-api.js")(app);
 
 
 // Syncing our sequelize models and then starting our Express app
