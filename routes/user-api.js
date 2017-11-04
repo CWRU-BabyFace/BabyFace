@@ -1,14 +1,15 @@
-var User = require("../models/user.js");
+var db = require("../models");
 
 module.exports = function(app) {
 
   app.get("/api/user/:id", function(req, res) {
-    User.findOne({
+    db.User.findOne({
       where: {
         id: req.params.id
-      }
-    }).then(function(user) {
-      res.json(user);
+      },
+      include: [db.Child]
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
