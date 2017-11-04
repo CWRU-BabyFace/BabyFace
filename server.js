@@ -20,12 +20,13 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(__dirname + "./public"));
+
 
 require("./controllers/child-api.js")(app);
 require("./controllers/memory-api.js")(app);
 require("./controllers/user-api.js")(app);
-require("./controllers/html-routes.js")(app);
+
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({ force: false }).then(function() {
