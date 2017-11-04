@@ -1,0 +1,3 @@
+CREATE DATABASE bf_db;
+USE DATABASE bf_db; 
+
