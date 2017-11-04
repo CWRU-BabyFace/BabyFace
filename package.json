@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/CWRU-BabyFace/BabyFace/issues"
   },
-  "homepage": "https://github.com/CWRU-BabyFace/BabyFace#readme"
+  "homepage": "https://github.com/CWRU-BabyFace/BabyFace#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.22.1"
+  }
 }
