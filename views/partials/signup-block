@@ -1,0 +1,18 @@
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<div class="panel panel-default">
+					<h4>Not a member? Sign Up for BabyFace today!</h4>
+					<div class="input-group" id="log">
+						<form method="POST" action="">
+  						<input type="text" class="form-control" placeholder="Pick a Username" aria-label="Username" aria-describedby="">
+  						<input type="text" class="form-control" placeholder="Set a Password" aria-label="Password" aria-describedby="">
+						<button class="btn btn-default" type="submit">Sign Up</button>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+		</div>
+	</div>

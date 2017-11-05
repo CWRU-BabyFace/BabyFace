@@ -12,6 +12,6 @@ INSERT INTO memories (title, image, date, caption, ChildId) VALUES ('birthday', 
 INSERT INTO memories (title, image, date, caption, ChildId) VALUES ('holiday', 'no image', '2016-12-25', 'christmas', 2);
 INSERT INTO memories (title, image, date, caption, ChildId) VALUES ('summer', 'no image', '2016-07-28', 'summer', 2);
 
-INSERT INTO memories (title, image, date, caption, ChildId) VALUES ('autumn', 'no image', '2017-10-29', 'Halloween', 3);
-INSERT INTO memories (title, image, date, caption, ChildId) VALUES ('November', 'no image', '2017-11-01', 'Day of the Dead', 3);
-INSERT INTO memories (title, image, date, caption, ChildId) VALUES ('Weekend', 'no image', '2017-11-28', 'Veterans Day', 3);
+INSERT INTO memories (title, image, date, caption, ChildId) VALUES ('autumn', 'no image', '2017-10-29', 'Halloween', 1);
+INSERT INTO memories (title, image, date, caption, ChildId) VALUES ('November', 'no image', '2017-11-01', 'Day of the Dead', 1);
+INSERT INTO memories (title, image, date, caption, ChildId) VALUES ('Weekend', 'no image', '2017-11-28', 'Veterans Day', 1);
