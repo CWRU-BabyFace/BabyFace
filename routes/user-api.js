@@ -2,6 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
 
+  //Route for retrieving a single user
   app.get("/api/user/:id", function(req, res) {
     db.User.findOne({
       where: {
@@ -13,19 +14,22 @@ module.exports = function(app) {
     });
   });
 
+
+  //Route for creating a new user
   app.post("/api/user", function(req, res) {
-    User.create(req.body).then(function(data) { //May need this data to determine successful
-      res.json(data);
+    db.User.create(req.body).then(function(dbUser) { //May need this data to determine successful
+      res.json(dbUser);
     });
   });
 
+  //Route for deleting a user... if needed
   app.delete("/api/user/:id", function(req, res) {
-    User.destroy({
+    db.User.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(data) { //May need this data to determine success
-      res.json(data);
+    }).then(function(dbUser) { //May need this data to determine success
+      res.json(dbUser);
     });
   });
 };
