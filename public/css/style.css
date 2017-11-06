@@ -21,3 +21,23 @@ h3{
 h1{
 	margin-left: 8%; 
 }
+
+input, button{
+	margin: 10px !important;
+}
+
+h4{
+	font-family: 'Love Ya Like A Sister', cursive;
+	margin-left: 10px;
+	color: #6B6565;
+}
+
+.panel{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #B4B1B1;
+
+}
+
+
+
