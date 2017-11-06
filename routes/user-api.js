@@ -13,7 +13,7 @@ module.exports = function(app) {
       //include: [db.Child]
     }).then(function(dbUser) {
       console.log(dbUser);
-      if (dbUser === null) {
+      if (dbUser !== null) {
       res.json(dbUser);
       res.render("userhome");
       }
