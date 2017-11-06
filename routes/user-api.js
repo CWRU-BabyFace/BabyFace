@@ -3,14 +3,27 @@ var db = require("../models");
 module.exports = function(app) {
 
   //Route for retrieving a single user
-  app.get("/api/user/:id", function(req, res) {
+  app.get("/api/verify", function(req, res) {
     db.User.findOne({
       where: {
-        id: req.params.id
-      },
-      include: [db.Child]
+        //id: req.body.username,
+        name: req.body.username,
+        password: req.body.password
+      }//,
+      //include: [db.Child]
     }).then(function(dbUser) {
+      console.log(dbUser);
+      if (dbUser === null) {
       res.json(dbUser);
+      res.render("userhome");
+      }
+      else{
+        var hbsObject = {
+          notFound: "User Not Found!"
+        }
+        console.log("user not found");
+        res.redirect("/");
+      }
     });
   });
 
