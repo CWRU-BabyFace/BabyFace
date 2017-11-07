@@ -3,14 +3,14 @@ var db = require("../models");
 module.exports = function(app) {
 
   //Route for retrieving a single user
-  app.get("/api/verify/:username/:password", function(req, res) {
-    console.log(req.params.username);
-    console.log(req.params.password);
+  app.get("/api/verify", function(req, res) {
+    console.log(req.body.username);
+    console.log(req.body.password);
     db.User.findOne({
       where: {
         //id: req.body.username,
-        name: req.params.username,
-        password: req.params.password
+        name: req.body.username,
+        password: req.body.password
       }//,
       //include: [db.Child]
     }).then(function(dbUser) {
