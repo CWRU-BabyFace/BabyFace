@@ -1,5 +1,5 @@
 	{{#if notFound}}
-	<div class="alert alert-danger" role="alert">{{notFound}}</div>
+	<div class="alert alert-danger" role="alert">NOT FOUND!!!!</div>
 	{{/if}}
 
 	<div class="container">
@@ -9,7 +9,7 @@
 				<div class="panel panel-default">
 					<h4>Login to BabyFace</h4>
 					<!--<div class="input-group" id="log">-->
-						<form action="/login" method="post">
+						<form action="/api/verify" method="post">
 	  						<input type="text" class="form-control" placeholder="Username" name="username">
 	  						<input type="text" class="form-control" placeholder="Password" name="password">
 							<button class="btn btn-default" type="submit">Log In</button>

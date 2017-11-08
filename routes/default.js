@@ -26,7 +26,7 @@ module.exports = function(app) {
 
 	app.post("/login", 
 		passport.authenticate('local'), function(req, res) { 
-			console.log(req);
+			//console.log(req);
 			res.render('userhome');
 		});
 
