@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		image: {
 			type: DataTypes.BLOB,
-			allowNull: false
+			allowNull: false,
 		},
 		date: {
 			type: DataTypes.DATEONLY, //DATE without time.
@@ -32,3 +32,4 @@ module.exports = function(sequelize, DataTypes) {
 
 	return Memory;
 };
+
