@@ -42,7 +42,16 @@ module.exports = function(app) {
         caption: req.body.caption,
         ChildId: req.body.childId,
         image: req.body.image ? req.body.image : "no-image"
+    }).then(function(newMemory) {
+      var query = {};
+      if (req.body.childId) {
+          query.ChildId = req.body.childId;
+      }
+      db.Memory.findAll({
+      where: query,
+      include: [db.Child]
     }).then(function(dbMemory) {
+      console.log(dbMemory);
       var memoryObject = {
         childMemory: dbMemory
       }
