@@ -18,7 +18,8 @@ module.exports = function(app) {
       if (dbUser !== null) {
         var userObject = {
           username: dbUser.dataValues.name,
-          children: dbUser.Children
+          children: dbUser.Children,
+          userId: dbUser.dataValues.id
         };
         console.log(userObject);
       res.render("userhome", userObject);

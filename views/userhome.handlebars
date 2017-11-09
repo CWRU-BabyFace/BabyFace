@@ -11,6 +11,7 @@
 		<div class="panel panel-default">
 			<h4>Add A Child</h4>
 				<form action="/api/child" method="post">
+					<input type="hidden" name="userId" value="{{userId}}">
 					<div name="userId" style="display:none"></div>
 	  				<input type="text" class="form-control" placeholder="Child's Name" name="name">
 	  				<input type="text" class="form-control" placeholder="Date of Birth" name="dob">
