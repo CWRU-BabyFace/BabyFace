@@ -3,14 +3,14 @@
 			<div class="col-lg-2"></div>
 			<div class="col-lg-8">
 				<div class="panel panel-default">
-					<h1>Timeline For {{childMemory}}</h1>
+					<h1>Timeline For {{childName}}</h1>
 				</div>
 			</div>
 		</div>
 		<div class="panel panel-default">
 			<h4>Add A Memory</h4>
 				<form action="/api/memory" method="post" id="addMemoryForm">
-					<input type="hidden" name="userName" value="{{username}}">
+					<input type="hidden" name="childName" value="{{childName}}">
 					<input type="hidden" name="userId" value="{{userId}}">
 	  				<input type="text" class="form-control" placeholder="Memory Title" name="title">
 	  				<input type="date" name="date">
@@ -18,6 +18,13 @@
 	  				<textarea rows="4" cols="50" name="caption" form="addMemoryForm">Describe Memory...</textarea>
 					<button class="btn btn-default" type="submit">Add Memory</button>
 				</form>
+				<ul>
+				{{#each children}}
+					<form action="/api/memory/{{this.id}}" method="get">
+						<button class="btn btn-default" type="submit">{{this.name}}</button>
+					</form>
+				{{/each}}
+			</ul>
 			<h4>Timline Goes Here!!!</h4>
 		</div>
 </div>

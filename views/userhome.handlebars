@@ -19,7 +19,7 @@
 			<h4>Select Child</h4>
 			<ul>
 				{{#each children}}
-					<form action="/api/memory/{{this.id}}" method="get">
+					<form action="/api/memory/{{this.id}}/{{this.name}}" method="get">
 						<button class="btn btn-default" type="submit">{{this.name}}</button>
 					</form>
 				{{/each}}
