@@ -36,9 +36,23 @@ module.exports = function(app) {
     db.Child.create({name: req.body.name,
         dob: req.body.dob, 
         UserId: req.body.userId
-      }).then(function(dbChild) {
-        console.log(dbChild);
-        res.redirect("/");
+      }).then(function(newChild) {
+        var query = {};
+      if (req.body.userId) {
+          query.UserId = req.body.userId;
+      }
+        db.Child.findAll({
+        where: query,
+        include: [db.User]
+      }).then(function(children) {
+          var userHomeObject = {
+          username: req.body.userName,
+          children: children,
+          userId: req.body.userId
+      };
+        console.log(userHomeObject);
+        res.render("userhome", userHomeObject);
+      });
     });
   });
 
