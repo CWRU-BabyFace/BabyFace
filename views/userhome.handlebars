@@ -3,9 +3,26 @@
 			<div class="col-lg-2"></div>
 			<div class="col-lg-8">
 				<div class="panel panel-default">
-					<h1>THIS IS A TEST AND THE LOGIN WORKS BRO</h1>
+					<h1>Welcome {{username}}</h1>
 				</div>
 				<div class="col-lg-2"></div>
 			</div>
 		</div>
-	</div>
+		<div class="panel panel-default">
+			<h4>Add A Child</h4>
+				<form action="/api/child" method="post">
+					<div name="userId" style="display:none"></div>
+	  				<input type="text" class="form-control" placeholder="Child's Name" name="name">
+	  				<input type="text" class="form-control" placeholder="Date of Birth" name="dob">
+					<button class="btn btn-default" type="submit">Add A Child</button>
+				</form>
+			<h4>Select Child</h4>
+			<ul>
+				{{#each children}}
+					<form action="/api/memory/{{this.id}}" method="get">
+						<button class="btn btn-default" type="submit">{this.name}</button>
+					</form>
+				{{/each}}
+			</ul>
+		</div>
+</div>

@@ -32,8 +32,10 @@ module.exports = function(app) {
 
   // Post route for creating a new child
   app.post("/api/child", function(req, res) {
-    db.Child.create(req.body).then(function(dbChild) { //May need this data to determine successful
-      res.json(dbChild);
+    db.Child.create({name: req.body.name,
+        dob: req.body.dob}).then(function(dbChild) {
+          console.log(dbChild);
+        res.redirect("/");
     });
   });
 

@@ -11,12 +11,17 @@ module.exports = function(app) {
         //id: req.body.username,
         name: req.body.username,
         password: req.body.password
-      }
-      //include: [db.Child]
+      },
+      include: [db.Child]
     }).then(function(dbUser) {
       console.log(dbUser);
       if (dbUser !== null) {
-      res.render("userhome");
+        var userObject = {
+          username: dbUser.dataValues.name,
+          children: dbUser.Children
+        };
+        console.log(userObject);
+      res.render("userhome", userObject);
       }
       else{
         var hbsObject = {
