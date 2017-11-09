@@ -23,7 +23,10 @@ module.exports = function(app) {
     }
     db.Memory.findAll({
       where: query,
-      include: [db.Child]
+      include: [db.Child],
+      order: [
+        ["date" , "ASC"]
+      ]
     }).then(function(dbMemory) {
       console.log(dbMemory);
       var memoryObject = {
@@ -50,7 +53,10 @@ module.exports = function(app) {
       }
       db.Memory.findAll({
       where: query,
-      include: [db.Child]
+      include: [db.Child],
+      order: [
+        ["date" , "ASC"]
+      ]
     }).then(function(dbMemory) {
       console.log(dbMemory);
       var memoryObject = {

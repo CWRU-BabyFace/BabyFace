@@ -25,6 +25,21 @@
 					</form>
 				{{/each}}
 			</ul>
-			<h4>Timline Goes Here!!!</h4>
+		
+			<h4>Memories!!!</h4>
+				<ul>
+					{{#each childMemory}}
+													
+						
+							<h4>Title: {{this.title}}</h4>
+							<img class="family" src="http://www.storeitfoods.com/files/1730690/uploaded/Happy%20Family.jpg">
+						
+						<div class="info col-lg-6">
+							<h5>~{{this.date}}~</h5>
+							<p>~{{this.caption}}<p>
+						</div>	
+						
+					{{/each}}
+				</ul>
 		</div>
 </div>

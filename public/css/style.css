@@ -47,4 +47,17 @@ input{
 	width: 90% !important;
 }
 
+p, h5{
+	font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.family{
+	height: 188px;
+	width: 250px;
+}
+
+.info{
+	padding-left: 30px;
+}
+
 
