@@ -15,7 +15,7 @@ module.exports = function(app) {
   // });
 
   //Get route for retrieving all memories for a child
-  app.get("/api/memory/:id", function(req, res) {
+  app.get("/api/memory/:id/:childName", function(req, res) {
     var query = {};
     if (req.params.id) {
       console.log(req.params);
@@ -27,8 +27,9 @@ module.exports = function(app) {
     }).then(function(dbMemory) {
       console.log(dbMemory);
       var memoryObject = {
+        childName: req.params.childName,
         childMemory: dbMemory
-      }
+      };
       res.render("timeline", memoryObject)
     });
   });
@@ -53,12 +54,14 @@ module.exports = function(app) {
     }).then(function(dbMemory) {
       console.log(dbMemory);
       var memoryObject = {
+        childName: req.body.childName,
         childMemory: dbMemory
-      }
+      };
       console.log(dbMemory);
       res.render("timeline", memoryObject);
     });
   });
+    });
 
 
   // DELETE route for deleting posts.. if needed
