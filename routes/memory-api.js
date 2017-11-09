@@ -16,13 +16,10 @@ module.exports = function(app) {
 
   //Get route for retrieving all memories for a child
   app.get("/api/memory/:id/:childName", function(req, res) {
-    var query = {};
-    if (req.params.id) {
-      console.log(req.params);
-      query.ChildId = req.params.id;
-    }
+      var query = {};
+      console.log(req.params.id);
     db.Memory.findAll({
-      where: query,
+      where: { ChildId: req.params.id},
       include: [db.Child],
       order: [
         ["date" , "ASC"]
@@ -31,9 +28,10 @@ module.exports = function(app) {
       console.log(dbMemory);
       var memoryObject = {
         childName: req.params.childName,
-        childMemory: dbMemory
+        childMemory: dbMemory,
+        childId: req.params.id
       };
-      res.render("timeline", memoryObject)
+        res.render("timeline", memoryObject);
     });
   });
 

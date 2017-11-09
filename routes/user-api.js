@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
 
-  //Route for retrieving a single user
+ //Route for retrieving a single user
   app.post("/api/verify", function(req, res) {
     console.log(req.body.username);
     console.log(req.body);
@@ -20,7 +20,10 @@ module.exports = function(app) {
           username: dbUser.dataValues.name,
           children: dbUser.Children,
           userId: dbUser.dataValues.id
-        };
+          };
+          userObject.children.forEach(function(child) {
+              console.log(child.dataValues)
+          });
         console.log(userObject);
       res.render("userhome", userObject);
       }

@@ -18,11 +18,12 @@
 				</form>
 			<h4>Select Child</h4>
 			<ul>
-				{{#each children}}
-					<form action="/api/memory/{{this.id}}/{{this.name}}" method="get">
-						<button class="btn btn-default" type="submit">{{this.name}}</button>
-					</form>
-				{{/each}}
-			</ul>
+                {{#each children}}
+                    <form action="/api/memory/{{this.id}}/{{this.name}}" method="get">
+                        <h4>{{this.id}}</h4>
+                        <button class="btn btn-default" type="submit">{{this.name}}</button>
+                    </form>
+                {{/each}}
+            </ul>
 		</div>
 </div>
