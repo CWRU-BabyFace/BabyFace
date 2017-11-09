@@ -3,8 +3,11 @@
 	background-color: #FEFDB0;
 }
 
+
+
 body{
 	background-image: url(/images/clouds.png);
+	height: 100%;
 }
 
 h3{
@@ -19,6 +22,7 @@ h3{
 
 
 h1{
+	font-family: 'Love Ya Like A Sister', cursive;
 	margin-left: 8%; 
 }
 
